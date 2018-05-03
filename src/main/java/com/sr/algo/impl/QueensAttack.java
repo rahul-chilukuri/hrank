@@ -1,5 +1,7 @@
 package com.sr.algo.impl;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 
 public class QueensAttack {
@@ -9,6 +11,7 @@ public class QueensAttack {
     }
 
     static int queensAttack(int n, int k, int qr, int qc, int[][] obstacles) {
+        Instant start = Instant.now();
         int returnValue = 0;
         Set<int[]> obstHashes = new TreeSet<>(Comparator.comparingInt((int[] arr) -> arr[0]).thenComparingInt((int[] arr)-> arr[1]));
 
@@ -21,6 +24,7 @@ public class QueensAttack {
         for(DIR dir: DIR.values()) {
             returnValue+= getSquares(dir, n,  qr, qc, obstHashes);
         }
+        System.out.println("Total time(ms) "+ Duration.between(Instant.now(), start).toMillis());
         return returnValue;
     }
 

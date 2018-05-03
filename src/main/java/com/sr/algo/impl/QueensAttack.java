@@ -1,4 +1,4 @@
-package com.sr.algo.impl.queen.attack;
+package com.sr.algo.impl;
 
 import java.util.*;
 

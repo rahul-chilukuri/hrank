@@ -1,4 +1,4 @@
-package com.sr.algo.impl;
+package com.sr.algo.hr;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

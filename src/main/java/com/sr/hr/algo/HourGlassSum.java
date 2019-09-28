@@ -1,3 +1,5 @@
+package com.sr.algo.hr;
+
 import java.io.*;
 import java.math.*;
 import java.security.*;

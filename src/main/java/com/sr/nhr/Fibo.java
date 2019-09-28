@@ -1,26 +1,31 @@
 package com.sr.nhr;
 
+import com.sr.utils.InputUtil;
+
 import java.util.Arrays;
 
 public class Fibo {
     static long numberOfCalls=0;
     public static void main(String[] args) {
         long it=0, rc=0, rcm=0;
-        int n = 5;
+        int n = InputUtil.getRandomInt(20);
+        System.out.println(" n  ==> "+n);
 
         long[] memo = new long[n+1];
         memo[0] = 0;
         memo[1] = 1;
 
         //it = iterative(n);
-        rc = recursive(n);
-        //rcm = recursiveMemoization(n, memo);
+        //System.out.println("it  ==> "+it);
 
-        System.out.println("it  ==> "+it);
-        System.out.println("rc  ==> "+rc);
-        System.out.println("rcm ==> "+rcm);
-        System.out.println("Total number of calls "+numberOfCalls);
-        //System.out.println(recursive(n) == recursiveMemoization(n, memo));
+        //rc = recursive(n);
+        //System.out.println("rc  ==> "+rc);
+
+        //rcm = recursiveMemoization(n, memo);
+        //System.out.println("rcm ==> "+rcm);
+
+        printFibSeries(n, memo);
+        //System.out.println("Total number of calls "+numberOfCalls);
     }
 
     private static long iterative(long n) {
@@ -56,7 +61,7 @@ public class Fibo {
     }
 
     private static long recursiveMemoization(int n, long[] memo) {
-        long fib=0;
+        long fib;
         if(n <=0 ) {
             numberOfCalls++;
             fib = memo[0];
@@ -66,11 +71,20 @@ public class Fibo {
         } else {
             if(memo[n] == 0) {
                 memo[n] = recursiveMemoization(n-1, memo)+recursiveMemoization(n-2, memo);
-                //System.out.println(Arrays.toString(memo));
                 numberOfCalls++;
             }
             fib = memo[n];
         }
         return fib;
+    }
+
+    private static void printFibSeries(int n, long[] memo) {
+        if(n > 1 ) {
+            if(memo[n] == 0) {
+                memo[n] = recursiveMemoization(n-1, memo)+recursiveMemoization(n-2, memo);
+            }
+        }
+        long[] spliced = Arrays.copyOfRange(memo, 1, memo.length);
+        System.out.println(Arrays.toString(spliced));
     }
 }

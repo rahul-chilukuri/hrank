@@ -1,4 +1,4 @@
-package main.java.com.sr.utils;
+package com.sr.utils;
 
 import java.util.Scanner;
 
@@ -16,6 +16,10 @@ public class InputUtil {
         }
         scanner.close();
         return c;
+    }
+
+    public static int getRandomInt(int n) {
+        return (int) Math.ceil(Math.random()*n);
     }
 
     public static void swapInts(Integer[] arr, int i, int j) {

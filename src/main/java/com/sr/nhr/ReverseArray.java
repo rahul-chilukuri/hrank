@@ -1,6 +1,6 @@
 package com.sr.nhr;
 
-import main.java.com.sr.utils.InputUtil;
+import com.sr.utils.InputUtil;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.sr.algo.hr;
+package com.sr.hr.algo;
 
 import java.time.Duration;
 import java.time.Instant;

@@ -1,4 +1,4 @@
-package main.java.com.sr.algo.nhr;
+package com.sr.nhr;
 
 import main.java.com.sr.utils.InputUtil;
 

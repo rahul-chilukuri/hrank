@@ -1,7 +1,6 @@
-package com.sr.nhr;
+package com.sr.nhr.algo;
 
 import com.sr.utils.InputUtil;
-
 import java.util.Arrays;
 
 public class Fibo {
@@ -11,20 +10,16 @@ public class Fibo {
         int n = InputUtil.getRandomInt(20);
         System.out.println(" n  ==> "+n);
 
-        long[] memo = new long[n+1];
-        memo[0] = 0;
-        memo[1] = 1;
-
         //it = iterative(n);
         //System.out.println("it  ==> "+it);
 
         //rc = recursive(n);
         //System.out.println("rc  ==> "+rc);
 
-        //rcm = recursiveMemoization(n, memo);
+        //rcm = recursiveM(n);
         //System.out.println("rcm ==> "+rcm);
 
-        printFibSeries(n, memo);
+        printFibSeries(n);
         //System.out.println("Total number of calls "+numberOfCalls);
     }
 
@@ -60,6 +55,13 @@ public class Fibo {
 
     }
 
+    private static long recursiveM(int n) {
+        long[] memo = new long[n+1];
+        memo[0] = 0;
+        memo[1] = 1;
+        return recursiveMemoization(n, memo);
+    }
+
     private static long recursiveMemoization(int n, long[] memo) {
         long fib;
         if(n <=0 ) {
@@ -78,13 +80,19 @@ public class Fibo {
         return fib;
     }
 
-    private static void printFibSeries(int n, long[] memo) {
+    private static void printFibSeries(int n) {
+        int arrLength = n+1;
+        long[] memo = new long[arrLength];
+        memo[0]=0;
+        memo[1]=1;
         if(n > 1 ) {
             if(memo[n] == 0) {
                 memo[n] = recursiveMemoization(n-1, memo)+recursiveMemoization(n-2, memo);
             }
         }
-        long[] spliced = Arrays.copyOfRange(memo, 1, memo.length);
-        System.out.println(Arrays.toString(spliced));
+        for(int i=1; i < arrLength; i++) {
+            System.out.print(" "+memo[i]);
+        }
+
     }
 }

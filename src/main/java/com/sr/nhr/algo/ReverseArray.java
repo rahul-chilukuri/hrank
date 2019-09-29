@@ -1,4 +1,4 @@
-package com.sr.nhr;
+package com.sr.nhr.algo;
 
 import com.sr.utils.InputUtil;
 

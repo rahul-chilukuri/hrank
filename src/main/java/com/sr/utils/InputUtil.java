@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class InputUtil {
     private static final Scanner scanner = new Scanner(System.in);
     public static Integer[] getIntArray() {
-        System.out.println("Enter array ");
-        String[] cItems = scanner.nextLine().split(" ");
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-        int n = cItems.length;
+        int n= (int) (20*Math.random());
+        if(n < 3) {
+            n+=n*2+n%3;
+        }
         Integer[] c = new Integer[n];
         for (int i = 0; i < n; i++) {
-            int cItem = Integer.parseInt(cItems[i]);
+            int cItem = (int) (10*Math.random()+n%2);
             c[i] = cItem;
         }
         scanner.close();

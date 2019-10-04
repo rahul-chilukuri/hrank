@@ -4,25 +4,29 @@ import com.sr.utils.InputUtil;
 
 import java.util.Arrays;
 
+/**
+ * Elements to the left are to be assumed sorted
+ * if elements on the right are less than any of the
+ * elements on the left, swap until the right position is achieved
+ */
 public class InsertionSort {
     public static void main(String[] args) {
         Integer[] arr = InputUtil.getIntArray();
-        //Integer[] arr = new Integer[]{8,7,5,4,3,2,1};
-        //Integer[] arr = new Integer[]{1,2,3,4,5,7,8};
         System.out.println(Arrays.toString(arr));
-        insertionSort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
 
-    public static void insertionSort(Integer[] arr){
         for(int i=0; i < arr.length-1;i++) {
             for(int j=i+1; j < arr.length; j++) {
                 if( (i < j && arr[j] < arr[i]) || ( i > j && arr[j] > arr[i])) {
                     InputUtil.swapInts(arr, i , j);
+                    System.out.println(Arrays.toString(arr));
                 }
             }
         }
+
+        System.out.println(Arrays.toString(arr));
     }
+
+
 
     public static void sort(Integer[] arr){
         // 5 1 8 3 9 6

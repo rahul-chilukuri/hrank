@@ -4,11 +4,16 @@ import com.sr.utils.InputUtil;
 
 import java.util.Arrays;
 
+/**
+ * Sort based on pivot
+ * all elements to the right of pivot are greater than pivot
+ * all elements to the left of pivot are less than pivot
+ * Once pivot is placed appropriately, recursively quicksort
+ * arrays to the left and right of pivot
+ */
 public class QuickSort {
     public static void main(String[] args) {
         Integer[] arr = InputUtil.getIntArray();
-        //Integer[] arr = new Integer[]{8,7,5,4,3,2,1};
-        //Integer[] arr = new Integer[]{1,2,3,4,5,7,8};
         System.out.println(Arrays.toString(arr));
         quickSort(arr,0, arr.length-1);
         System.out.println(Arrays.toString(arr));

@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class InsertionSort {
     public static void main(String[] args) {
-        Integer[] arr = InputUtil.getIntArray();
+        int[] arr = InputUtil.getIntArray();
         System.out.println(Arrays.toString(arr));
 
         for(int i=0; i < arr.length-1;i++) {
@@ -29,7 +29,6 @@ public class InsertionSort {
 
 
     public static void sort(Integer[] arr){
-        // 5 1 8 3 9 6
         for(int i=0; i< arr.length;i++) {
             int temp = arr[i];
             int j = i;

@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class SelectionSort {
     public static void main(String[] args) {
-        Integer[] arr = InputUtil.getIntArray();
+        int[] arr = InputUtil.getIntArray();
         System.out.println(Arrays.toString(arr));
 
         for(int i = 0 ; i < arr.length-1;i++) {

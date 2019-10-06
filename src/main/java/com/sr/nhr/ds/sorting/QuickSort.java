@@ -13,13 +13,13 @@ import java.util.Arrays;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        Integer[] arr = InputUtil.getIntArray();
+        int[] arr = InputUtil.getIntArray();
         System.out.println(Arrays.toString(arr));
         quickSort(arr,0, arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
 
-    public static void quickSort(Integer[] arr, int left, int right) {
+    public static void quickSort(int[] arr, int left, int right) {
         if(left >= right) {
             return;
         }
@@ -29,7 +29,7 @@ public class QuickSort {
         quickSort(arr, p, right);
     }
 
-    public static int partition(Integer[] arr, int left, int right, int pivot) {
+    public static int partition(int[] arr, int left, int right, int pivot) {
         while(left < right) {
             while(arr[left] < pivot) {
                 left++;

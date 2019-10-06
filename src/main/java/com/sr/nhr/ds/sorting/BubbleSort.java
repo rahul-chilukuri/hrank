@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class BubbleSort {
     public static void main(String[] args) {
-        Integer[] arr = InputUtil.getIntArray();
+        int[] arr = InputUtil.getIntArray();
         System.out.println(Arrays.toString(arr));
 
         for(int k=0;k<arr.length;k++){

@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class ReverseArray {
     public static void main(String[] args) {
-        Integer[] arr = InputUtil.getIntArray();
+        int[] arr = InputUtil.getIntArray();
         int n = arr.length;
         System.out.println("Before swap "+Arrays.toString(arr));
         for(int i=0;i < n/2; i++) {

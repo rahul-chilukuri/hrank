@@ -2,7 +2,10 @@ package com.sr.hr.algo;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.*;
+import java.util.Comparator;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class QueensAttack {
 
